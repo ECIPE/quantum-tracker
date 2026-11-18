@@ -8,7 +8,7 @@
     "min_ratio": 1.0,
     "network_countries": 134,
     "thresholds": {
-      "industry_to_gdp": 43.93,
+      "industry_to_gdp": 43.81,
       "connectedness": 0.3045
     },
     "countries": [
@@ -230,10 +230,10 @@
       },
       {
         "country": "India",
-        "collaborations": 5026,
-        "industry_collaborations": 165,
+        "collaborations": 5025,
+        "industry_collaborations": 164,
         "partners": 80,
-        "industry_to_gdp": 41.71,
+        "industry_to_gdp": 41.46,
         "connectedness": 0.6015,
         "archetype": "Research Networkers"
       },
@@ -599,19 +599,19 @@
       },
       {
         "country": "UK",
-        "collaborations": 5953,
-        "industry_collaborations": 901,
+        "collaborations": 5951,
+        "industry_collaborations": 899,
         "partners": 79,
-        "industry_to_gdp": 225.1,
+        "industry_to_gdp": 224.6,
         "connectedness": 0.594,
         "archetype": "Global Innovation Hubs"
       },
       {
         "country": "US",
-        "collaborations": 20337,
-        "industry_collaborations": 3131,
+        "collaborations": 20340,
+        "industry_collaborations": 3133,
         "partners": 98,
-        "industry_to_gdp": 101.76,
+        "industry_to_gdp": 101.82,
         "connectedness": 0.7368,
         "archetype": "Global Innovation Hubs"
       },

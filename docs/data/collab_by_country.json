@@ -12,18 +12,18 @@
     },
     {
       "country": "US",
-      "entities": 1142,
-      "collaborations": 20337
+      "entities": 1144,
+      "collaborations": 20340
     },
     {
       "country": "Germany",
-      "entities": 389,
+      "entities": 388,
       "collaborations": 10326
     },
     {
       "country": "UK",
-      "entities": 270,
-      "collaborations": 5953
+      "entities": 269,
+      "collaborations": 5951
     },
     {
       "country": "Japan",
@@ -42,8 +42,8 @@
     },
     {
       "country": "India",
-      "entities": 595,
-      "collaborations": 5026
+      "entities": 594,
+      "collaborations": 5025
     },
     {
       "country": "Spain",
