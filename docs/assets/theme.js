@@ -327,8 +327,9 @@ hr.rule{border:0;border-top:1px solid var(--line);margin:18px 0;}
    Keep it that way: a filled background here is what made the page read as a
    stack of widgets. */
 .panels{display:grid;gap:34px 30px;margin-top:10px;}
-.panels.g2{grid-template-columns:1fr 1fr;}
+.panels.g2{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
 .panels .span2{grid-column:1/-1;}
+.panels>*{min-width:0;}
 .panel{border:none;border-radius:0;background:none;padding:22px 0 0;border-top:1px solid var(--line);}
 /* Figure title: a small teal "FIGURE 3:" eyebrow (.fig) over a larger dark-purple title. The
    eyebrow is a <span class="fig"> inside .ttl -- static pages write it in the HTML, the
@@ -348,7 +349,7 @@ hr.rule{border:0;border-top:1px solid var(--line);margin:18px 0;}
 .subttl{font-size:11px;font-weight:650;letter-spacing:.04em;text-transform:uppercase;
   color:var(--muted);margin:14px 0 6px;}
 .subttl:first-of-type{margin-top:2px;}
-@media (max-width:760px){ .panels.g2{grid-template-columns:1fr;} }
+@media (max-width:760px){ .panels.g2{grid-template-columns:minmax(0,1fr);} }
 
 /* ---------- mock/illustrative data badge ---------- */
 .mockbadge{display:inline-flex;align-items:center;gap:5px;font-size:9.5px;font-weight:700;
@@ -490,6 +491,17 @@ hr.rule{border:0;border-top:1px solid var(--line);margin:18px 0;}
 .chiprow.fused .chip{flex:1 1 auto;text-align:center;border:0;border-radius:0;padding:6px 12px;font-size:12px;font-weight:500;white-space:nowrap;}
 .chiprow.fused .chip+.chip{border-left:1px solid var(--pill);}
 .chiprow.fused .chip:not(.on):hover{background:#F4F4F4;}
+/* Phones: a nowrap pill with long labels is wider than the screen and clips its last options
+   (overflow:hidden). Let the options wrap onto a second row inside a rounded box instead. The
+   -1px margins push each item's top and left border under the box's own border (clipped), so
+   rows keep one-pixel dividers. */
+@media (max-width:560px){
+  .ctl{flex-direction:column;align-items:stretch;gap:6px;}
+  .seg,.chiprow.fused{flex-wrap:wrap;border-radius:16px;}
+  .seg button,.chiprow.fused .chip{white-space:normal;margin:-1px 0 0 -1px;border-top:1px solid var(--pill);}
+  .seg button+button,.chiprow.fused .chip+.chip{border-left:1px solid var(--pill);}
+  .seg button:first-child,.chiprow.fused .chip:first-child{border-left:1px solid var(--pill);}
+}
 /* A chip that is unavailable because the other selector already holds it: still
    readable, visibly not clickable. */
 .chip.off{opacity:.4;cursor:not-allowed;}
