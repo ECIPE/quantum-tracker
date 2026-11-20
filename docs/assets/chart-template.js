@@ -294,7 +294,11 @@
     axisG.selectAll(".tick").each(function (d) {
       const tick = d3.select(this);
       tick.selectAll("image.flagtick").remove();
-      tick.select("text").attr("x", -(9 + size + gap));
+      const label = tick.select("text").attr("x", -(9 + size + gap));
+      // Bilingual names ("QuantumCTek (国盾量子)") show the English name only on the axis:
+      // the bracketed CJK part made the longest labels overflow the left margin. The
+      // full name stays in the tooltip, which reads the datum, not this text.
+      label.text(String(d).replace(/\s*\([^)]*[⺀-鿿豈-﫿＀-￯][^)]*\)\s*$/, ""));
       const iso = QT.flagCode(countryOf(d));
       if (!iso) return;
       tick.append("image").attr("class", "flagtick")
